@@ -35,8 +35,8 @@ def send_mail(URL, title, price):
     msg = f"Subject: {subject}\n\n{body}"
 
     server.sendmail(
-        'wenceslaurodrigo@gmail.com',
-        'wenceslaurodrigo@gmail.com',
+        cfg["mailfrom"],
+        cfg["mailto"],
         msg
     )
     print('Mail has been sent successfully')
