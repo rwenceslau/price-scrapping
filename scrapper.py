@@ -12,12 +12,14 @@ def price_scrapper():
 
     title = soup.find(class_='pdp__title').get_text()
     price = soup.find(class_='price-display__price').get_text()
-    regular_price = 250.0
+    regular_price = 249.0
     converted_price = float(price[2:5])
 
     if (converted_price < regular_price):
         print(title, '\n',converted_price)
         send_mail(URL, title, price)
+    else:
+        print("Price is still at: " + price)
 
 def send_mail(URL, title, price):
 
@@ -40,7 +42,6 @@ def send_mail(URL, title, price):
         msg
     )
     print('Mail has been sent successfully')
-    
     server.quit()
 
 price_scrapper()
