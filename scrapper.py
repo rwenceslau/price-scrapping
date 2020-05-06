@@ -1,5 +1,6 @@
 import requests
 import smtplib
+import yaml
 from bs4 import BeautifulSoup
 
 def price_scrapper():
@@ -19,11 +20,15 @@ def price_scrapper():
         send_mail(URL, title, price)
 
 def send_mail(URL, title, price):
+
+    with open("config.yml", "r") as config:
+        cfg = yaml.load(config, Loader=yaml.FullLoader)
+
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login('wenceslaurodrigo@gmail.com', "hapkcnyujwcnuhud")
+    server.login(cfg["username"], cfg["password"])
 
     subject = title + ' price fell'
     body = 'The price of ' + title + ' fell down to ' + price + '\n\n'+ '\n\n Check it out on: ' + URL
