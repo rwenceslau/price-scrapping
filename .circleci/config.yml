@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: sneaker_scrapper.py 
+          command: python sneaker_scrapper.py 
           name: Test
 
 workflows:
