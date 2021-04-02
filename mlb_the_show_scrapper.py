@@ -4,7 +4,7 @@ import yaml
 from bs4 import BeautifulSoup
 
 def price_scrapper():
-    URL = 'https://store.playstation.com/pt-br/product/UP9000-CUSA17357_00-MLBTHESHOW20STND?smcid=pdc%3Apt-br%3Aexplore-gamefinder%3Aprimary%2520nav%3Amsg-games%3Acomprar-jogos'
+    URL = 'https://www.vans.com.br/sapatos/tenis/tenis-old-skool/p/1002001070011U'
     headers = {"User-Agent": 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'}
 
     page = requests.get(URL, headers = headers)

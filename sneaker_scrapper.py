@@ -1,6 +1,4 @@
 import requests
-import smtplib
-import yaml
 from bs4 import BeautifulSoup
 
 def price_scrapper():
