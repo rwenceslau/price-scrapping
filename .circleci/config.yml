@@ -13,7 +13,10 @@ jobs:
             python -m pip install -r requirements.txt
             python sneaker_scrapper.py
           name: Run
-          
+nightly:
+    triggers: #use the triggers key to indicate a scheduled build
+      - schedule:
+          cron: "0 0 * * *" # use cron syntax to set the schedule          
 workflows:
   main:
     jobs:
