@@ -6,6 +6,14 @@ class MailSender:
     hostname = 'smtp.gmail.com'
     port = 465
     configfile = 'config.yml'
+    togglesfile = 'toggles.yaml'
+
+    def check_send_toggle(self):
+
+        with open(self.togglesfile, "r") as toggles:
+            toggles = yaml.load(toggles, Loader=yaml.FullLoader)
+
+        return toggles["SENDMAIL"]
 
     def send_mail(self, URL, title, price):
 
